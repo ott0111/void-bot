@@ -1,6 +1,6 @@
 # Void Bot Dashboard
 
-A modern, high-end Discord bot dashboard frontend built with Next.js, TypeScript, and TailwindCSS. Features a dark esports-inspired theme with black and purple colors, smooth animations, and a clean SaaS-style layout.
+A modern, high-end Discord bot dashboard frontend built with pure HTML, CSS, and JavaScript. Features a dark esports-inspired theme with black and purple colors, smooth animations, and a clean SaaS-style layout.
 
 ## 🚀 Features
 
@@ -9,48 +9,28 @@ A modern, high-end Discord bot dashboard frontend built with Next.js, TypeScript
 - **Dashboard Overview**: Server statistics, member growth charts, and activity monitoring
 - **Moderation Controls**: Advanced auto-moderation settings with customizable punishments
 - **Music Player**: Full-featured music controls with queue management
-- **Security Features**: Anti-nuke protection and raid detection
 - **Settings Management**: Comprehensive bot configuration options
 - **Toast Notifications**: User-friendly feedback system
-- **Loading States**: Professional loading animations and skeletons
+- **Interactive Elements**: Toggle switches, sliders, dropdowns, and buttons
+- **Single Page Application**: Smooth navigation without page reloads
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 14 with App Router
-- **Language**: TypeScript
-- **Styling**: TailwindCSS with custom design system
-- **Icons**: Lucide React
-- **Notifications**: React Hot Toast
-- **Charts**: Recharts (for data visualization)
+- **HTML5**: Semantic markup and structure
+- **CSS3**: Custom design system with animations and transitions
+- **Vanilla JavaScript**: No frameworks, pure JS functionality
+- **Google Fonts**: Inter font family
+- **SVG Icons**: Inline scalable icons
 
 ## 📁 Project Structure
 
 ```
 void-bot-dashboard/
-├── src/
-│   ├── app/                    # Next.js App Router pages
-│   │   ├── dashboard/         # Dashboard overview page
-│   │   ├── moderation/        # Moderation settings
-│   │   ├── music/            # Music player and settings
-│   │   ├── settings/         # General settings
-│   │   ├── globals.css       # Global styles and Tailwind
-│   │   ├── layout.tsx        # Root layout component
-│   │   └── page.tsx          # Landing page
-│   ├── components/
-│   │   └── layout/          # Layout components
-│   │       ├── DashboardLayout.tsx
-│   │       ├── Sidebar.tsx
-│   │       └── TopBar.tsx
-│   ├── lib/
-│   │   ├── api.ts            # Mock API functions
-│   │   └── utils.ts          # Utility functions
-│   └── types/
-│       └── index.ts          # TypeScript type definitions
-├── public/                   # Static assets
-├── package.json
-├── tailwind.config.js
-├── tsconfig.json
-└── README.md
+├── index.html              # Main HTML file
+├── styles.css              # Complete CSS with design system
+├── script.js               # JavaScript functionality
+├── README.md               # Project documentation
+└── .gitignore              # Git ignore file
 ```
 
 ## 🎨 Design System
@@ -70,16 +50,9 @@ void-bot-dashboard/
 
 ## 📱 Pages
 
-### Landing Page
-- Hero section with gradient backgrounds
-- Feature showcase with icons
-- Pricing plans comparison
-- Discord login and bot invitation buttons
-- Responsive footer with links
-
 ### Dashboard
 - Server statistics cards
-- Member growth chart
+- Member growth chart placeholder
 - Top commands usage
 - Recent activity feed
 - Quick action shortcuts
@@ -89,7 +62,6 @@ void-bot-dashboard/
 - Content filtering options (spam, links, invites, caps, swear)
 - Punishment configuration
 - Threshold settings
-- Tips and best practices
 
 ### Music
 - Interactive music player with controls
@@ -102,95 +74,132 @@ void-bot-dashboard/
 - Basic configuration (prefix, language, timezone)
 - Bot status and activity
 - Embed color customization
-- Advanced API settings
-- Backup and recovery options
-- Danger zone for reset operations
+- Real-time updates
+
+### Additional Pages
+- Security (Anti-nuke protection)
+- Welcome (Greeting settings)
+- Logs (Activity monitoring)
+- Commands (Custom commands)
+- Economy (Virtual currency)
 
 ## 🔧 Installation & Setup
 
-1. **Clone the repository**
+1. **Download or clone the repository**
    ```bash
    git clone <repository-url>
    cd void-bot-dashboard
    ```
 
-2. **Install dependencies**
+2. **Open in browser**
+   Simply open `index.html` in your web browser:
    ```bash
-   npm install
+   # Double-click index.html or use:
+   open index.html
    ```
 
-3. **Run the development server**
+3. **Or serve with a local server** (optional)
    ```bash
-   npm run dev
+   # Using Python
+   python -m http.server 8000
+   
+   # Using Node.js
+   npx serve .
+   
+   # Using PHP
+   php -S localhost:8000
    ```
 
 4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+   Navigate to [http://localhost:8000](http://localhost:8000) (if using a server)
 
-## 📦 Build & Deploy
+## 🌐 Deployment
 
-1. **Build for production**
-   ```bash
-   npm run build
-   ```
+### Static Hosting Services
+The dashboard can be deployed to any static hosting service:
 
-2. **Start production server**
-   ```bash
-   npm start
-   ```
+- **Vercel**: Connect your GitHub repository and deploy
+- **Netlify**: Drag and drop the folder or connect Git
+- **GitHub Pages**: Enable GitHub Pages in your repository
+- **Firebase Hosting**: Use Firebase CLI to deploy
+- **Surge.sh**: Quick deployment with surge command
 
-3. **Lint code**
-   ```bash
-   npm run lint
-   ```
+### Deploy to Vercel
+```bash
+# Install Vercel CLI
+npm i -g vercel
 
-## 🔌 API Integration
+# Deploy
+vercel
 
-The dashboard currently uses mock API functions in `src/lib/api.ts`. To integrate with a real backend:
+# Or connect to GitHub for auto-deployment
+```
 
-1. Replace mock functions with actual API calls
-2. Update environment variables for API endpoints
-3. Implement proper authentication and authorization
-4. Add error handling for API failures
+### Deploy to Netlify
+```bash
+# Install Netlify CLI
+npm i -g netlify-cli
 
-## 🎯 Key Components
+# Deploy
+netlify deploy --prod --dir .
+```
 
-### DashboardLayout
-- Wraps all dashboard pages with sidebar and top bar
-- Handles responsive navigation
-- Provides consistent layout structure
+## 🎯 Key Features
 
-### Sidebar
-- Collapsible navigation menu
+### Navigation
+- Responsive sidebar with mobile hamburger menu
 - Active state indicators
-- Mobile-responsive with hamburger menu
-- Server and user information
+- Smooth transitions between pages
+- Server and user information display
 
-### TopBar
-- Server selector dropdown
-- User profile dropdown
-- Logout functionality
-- Premium status indicators
+### Interactive Elements
+- **Toggle Switches**: Custom styled on/off switches
+- **Input Fields**: Dark themed with focus states
+- **Buttons**: Primary and secondary styles with hover effects
+- **Dropdowns**: Styled select elements
+- **Cards**: Glass morphism effect with hover animations
 
-## 🎭 Custom Hooks & Utilities
+### Toast Notifications
+- Success, error, and info variants
+- Auto-dismiss after 3 seconds
+- Smooth slide-in animations
+- Stacking support for multiple toasts
 
-### API Functions
-- `getCurrentUser()`: Fetch user information
-- `getUserServers()`: Get user's Discord servers
-- `getGuildSettings()`: Retrieve server-specific settings
-- `updateGuildSettings()`: Save configuration changes
-- `getDashboardStats()`: Fetch dashboard statistics
+### Responsive Design
+- Mobile-first approach
+- Collapsible sidebar on mobile
+- Touch-friendly interface
+- Optimized for all screen sizes
+
+## 🎭 JavaScript Features
+
+### State Management
+- Centralized state object for application data
+- Persistent settings across page navigation
+- Real-time UI updates
+
+### Navigation System
+- Single Page Application (SPA) routing
+- History API support
+- Dynamic content loading
+- Active state management
+
+### Form Handling
+- Real-time form validation
+- Settings persistence
+- Interactive controls
+- Event handling
 
 ### Utility Functions
-- `formatNumber()`: Format large numbers with K/M suffixes
-- `formatDate()`: Format dates with locale support
-- `formatDuration()`: Convert seconds to readable duration
-- `cn()`: Utility for conditional class names
+- Toast notification system
+- Settings management
+- UI helpers
+- Event listeners
 
 ## 🚀 Future Enhancements
 
 - [ ] Real-time WebSocket integration
-- [ ] Advanced analytics and reporting
+- [ ] Advanced analytics and charts
 - [ ] Custom theme editor
 - [ ] Multi-server management
 - [ ] Plugin system
@@ -208,16 +217,21 @@ The dashboard currently uses mock API functions in `src/lib/api.ts`. To integrat
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## 📄 Browser Support
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- Chrome 60+
+- Firefox 55+
+- Safari 12+
+- Edge 79+
+- Mobile browsers (iOS Safari 12+, Chrome Mobile 60+)
 
 ## 🙏 Acknowledgments
 
-- [Next.js](https://nextjs.org/) - React framework
-- [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [Lucide](https://lucide.dev/) - Beautiful icons
-- [React Hot Toast](https://react-hot-toast.com/) - Toast notifications
+- **Google Fonts** - Inter font family
+- **SVG Icons** - Custom icon implementations
+- **CSS Grid & Flexbox** - Modern layout techniques
+- **CSS Variables** - Dynamic theming
+- **ES6+ JavaScript** - Modern JavaScript features
 
 ---
 
